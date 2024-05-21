@@ -1,0 +1,33 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Library_member",
+   "width": "Half"
+  },
+  {
+   "chart": "Library_Membership",
+   "width": "Half"
+  },
+  {
+   "chart": "Library_Transaction",
+   "width": "Half"
+  },
+  {
+   "chart": "Library_Article",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-05-15 15:42:26.164161",
+ "dashboard_name": "Library Managment",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-05-15 16:10:37.126394",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library Managment",
+ "owner": "Administrator"
+}

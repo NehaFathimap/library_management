@@ -1,0 +1,29 @@
+{
+ "cards": [],
+ "charts": [
+  {
+   "chart": "Library_1",
+   "width": "Half"
+  },
+  {
+   "chart": "Library_two",
+   "width": "Half"
+  },
+  {
+   "chart": "Library_three",
+   "width": "Half"
+  }
+ ],
+ "creation": "2024-05-15 15:42:26.164161",
+ "dashboard_name": "Library",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2024-05-15 15:54:20.654550",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Library",
+ "owner": "Administrator"
+}
