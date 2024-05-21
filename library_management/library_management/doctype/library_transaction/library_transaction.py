@@ -15,7 +15,7 @@ class LibraryTransaction(Document):
             self.validate_maximum_limit()
             # set the article status to be Issued
             for article in self.articles:
-                article = frappe.get_doc("Article", self.articles)
+                article = frappe.get_doc("Article",article.article)
                 article.status = "Issued"
                 article.save()
 
@@ -23,7 +23,7 @@ class LibraryTransaction(Document):
             self.validate_return()
             # set the article status to be Available
             for article in self.articles:
-                article = frappe.get_doc("Article", self.articles)
+                article = frappe.get_doc("Article", article.article)
                 article.status = "Available"
                 article.save()
 
@@ -32,13 +32,13 @@ class LibraryTransaction(Document):
 
          # article cannot be issued if it is already issued
         for article in self.articles:
-            article = frappe.get_doc("Article", self.articles)
+            article = frappe.get_doc("Article", article.article)
             if article.status == "Issued":
                 frappe.throw("Article is already issued by another member")
 
     def validate_return(self):
         for article in self.articles:
-            article = frappe.get_doc("Article", self.articles)
+            article = frappe.get_doc("Article",article.article)
         # article cannot be returned if it is not issued first
             if article.status == "Available":
                 frappe.throw("Article cannot be returned without being issued first")
