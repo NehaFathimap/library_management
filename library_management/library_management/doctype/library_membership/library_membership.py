@@ -22,14 +22,30 @@ class LibraryMembership(Document):
         )
         if exists:
             frappe.throw("There is an active membership for this member")
-        # get loan period and compute to_date by adding loan_period to from_date
-        loan_period = frappe.db.get_single_value("Library Settings", "loan_period")
-        self.to_date = frappe.utils.add_days(self.from_date, loan_period or 30)
+
 
     def validate(self):
-        if self.to_date < self.from_date:
-            frappe.throw("<b>ToDate</b> should  not be lesser than <b>FromDate</b>")
+        if self.from_date and self.to_date:
+            if self.to_date < self.from_date:
+                frappe.throw("<b>ToDate</b> should  not be lesser than <b>FromDate</b>")
 
     def autoname(self):
         format = "{}".format(self.library_member)
         self.name = make_autoname(format)
+
+    def validate_member(self):
+        return frappe.db.exists(
+              "Library Membership",
+                {
+                    "library_member": self.library_member,
+                    "docstatus": 1,
+                })
+    def before_save(self):
+        if self.validate_member() :
+            member = frappe.get_doc("Library Member",self.library_member)
+            member.status = "Active"
+            member.save()
+        else :
+            member = frappe.get_doc("Library Member",self.library_member)
+            member.status = "Deactive"
+            member.save()
