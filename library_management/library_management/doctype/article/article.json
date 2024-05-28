@@ -10,12 +10,14 @@
   "article_name",
   "image",
   "author",
+  "number_of_copies",
   "description",
   "isbn",
   "status",
   "publisher",
+  "published",
   "route",
-  "published"
+  "amended_from"
  ],
  "fields": [
   {
@@ -34,7 +36,8 @@
   {
    "fieldname": "author",
    "fieldtype": "Data",
-   "label": "Author"
+   "label": "Author",
+   "reqd": 1
   },
   {
    "fieldname": "description",
@@ -47,10 +50,12 @@
    "label": "ISBN"
   },
   {
+   "default": "Available",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Issued\nAvailable"
+   "options": "Issued\nAvailable",
+   "reqd": 1
   },
   {
    "fieldname": "publisher",
@@ -67,13 +72,29 @@
    "fieldname": "published",
    "fieldtype": "Check",
    "label": "published"
+  },
+  {
+   "fieldname": "number_of_copies",
+   "fieldtype": "Data",
+   "label": "Number of copies",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Article",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "has_web_view": 1,
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2024-05-17 14:46:42.390007",
+ "modified": "2024-05-27 11:46:35.620627",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Article",
@@ -97,5 +118,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "article_name"
+ "title_field": "article_name",
+ "track_seen": 1
 }

@@ -122,13 +122,13 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-# 	}
-# }
+doc_events = {
+	"User": {
+		"after_insert":"library_management.library_management.doc_events.user.user.new_user_document",
+        "validate" : "library_management.library_management.doc_events.user.user.new_roleprofile"
+
+	}
+}
 
 # Scheduled Tasks
 # ---------------
@@ -226,4 +226,3 @@ app_license = "mit"
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

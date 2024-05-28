@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "field:full_name",
  "creation": "2024-05-03 11:13:52.845642",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -31,12 +32,14 @@
   {
    "fieldname": "from_date",
    "fieldtype": "Date",
-   "label": "From Date"
+   "label": "From Date",
+   "reqd": 1
   },
   {
    "fieldname": "to_date",
    "fieldtype": "Date",
-   "label": "To Date"
+   "label": "To Date",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -58,11 +61,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-13 11:15:45.499491",
+ "modified": "2024-05-25 21:05:40.219582",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Membership",
- "naming_rule": "By script",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {
