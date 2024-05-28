@@ -9,7 +9,10 @@
   "last_name",
   "full_name",
   "email_address",
-  "phone"
+  "article_issued",
+  "phone",
+  "status",
+  "count"
  ],
  "fields": [
   {
@@ -33,17 +36,36 @@
   {
    "fieldname": "email_address",
    "fieldtype": "Data",
-   "label": "Email Address"
+   "label": "Email Address",
+   "options": "Email"
   },
   {
    "fieldname": "phone",
    "fieldtype": "Data",
    "label": "Phone"
+  },
+  {
+   "default": "Deactive",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nDeactive"
+  },
+  {
+   "fieldname": "article_issued",
+   "fieldtype": "Table",
+   "label": "Article issued",
+   "options": "Article Stock"
+  },
+  {
+   "fieldname": "count",
+   "fieldtype": "Data",
+   "label": "Article Count"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-05-13 10:38:27.955181",
+ "modified": "2024-05-28 11:50:41.225526",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Member",

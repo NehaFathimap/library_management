@@ -1,13 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LT.#####",
+ "autoname": "LM.#####",
  "creation": "2024-05-03 15:05:06.743375",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "articles",
   "library_member",
+  "articles",
   "type",
   "date",
   "amended_from",
@@ -18,14 +18,18 @@
   {
    "fieldname": "library_member",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Library Member",
-   "options": "Library Member"
+   "options": "Library Member",
+   "reqd": 1
   },
   {
    "fieldname": "type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Type",
-   "options": "Issue\nReturn"
+   "options": "Issue\nReturn",
+   "reqd": 1
   },
   {
    "fieldname": "date",
@@ -66,11 +70,11 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-20 16:57:02.739664",
+ "modified": "2024-05-27 09:13:54.418491",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Transaction",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By script",
  "owner": "Administrator",
  "permissions": [
   {
@@ -100,5 +104,6 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "library_member"
 }
